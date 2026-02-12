@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>⚡ Crypto Earning Hub - Earn Free Crypto Daily</title>
+    <title>⚡ Crypto Earning Hub - Earn Free Crypto Daily</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
             color: #c9d1d9;
             min-height: 100vh;
         }
-        
+
         .gradient-text {
             background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .link-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
@@ -31,12 +31,12 @@
             overflow: hidden;
             min-height: 5rem;
         }
-        
+
         .link-card:hover {
             transform: translateY(-8px) scale(1.02);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
-        
+
         .link-card::before {
             content: '';
             position: absolute;
@@ -47,24 +47,44 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
             transition: left 0.6s;
         }
-        
+
         .link-card:hover::before {
             left: 100%;
         }
-        
+
         .category-badge {
             animation: float 3s ease-in-out infinite;
         }
-        
+
+        .hero-panel {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.18), rgba(236, 72, 153, 0.12));
+            border: 1px solid rgba(139, 92, 246, 0.35);
+            backdrop-filter: blur(8px);
+        }
+
+        .cta-btn {
+            transition: all 0.25s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 30px rgba(139, 92, 246, 0.35);
+        }
+
+        .proof-chip {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
-        
+
         .glow {
             box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
         }
-        
+
         .floating-shapes {
             position: fixed;
             width: 100%;
@@ -73,13 +93,13 @@
             z-index: -1;
             pointer-events: none;
         }
-        
+
         .shape {
             position: absolute;
             opacity: 0.05;
             animation: float-shape 20s infinite;
         }
-        
+
         @keyframes float-shape {
             0%, 100% { transform: translate(0, 0) rotate(0deg); }
             33% { transform: translate(30px, -30px) rotate(120deg); }
@@ -88,8 +108,7 @@
     </style>
 </head>
 <body class="p-4 sm:p-6 md:p-8 relative">
-    
-    <!-- Floating background shapes -->
+
     <div class="floating-shapes">
         <div class="shape text-8xl top-10 left-10">💎</div>
         <div class="shape text-6xl top-40 right-20">🚀</div>
@@ -98,24 +117,50 @@
     </div>
 
     <div class="max-w-7xl mx-auto">
-        <!-- Hero Section -->
         <header class="text-center mb-12 sm:mb-16 pt-8">
-            <div class="mb-6">
-                
+            <div class="hero-panel rounded-3xl p-6 sm:p-10">
+                <p class="uppercase tracking-[0.25em] text-xs text-purple-300 mb-3">Top crypto earning opportunities</p>
+                <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-4">
+                    Earn Daily With <span class="gradient-text">Trusted Crypto Platforms</span>
+                </h1>
+                <p class="text-sm sm:text-lg text-slate-300 max-w-3xl mx-auto mb-6">
+                    Start with beginner-friendly sites, stack small wins daily, and scale into bigger rewards. Everything below is organized so new users can sign up fast and stay active.
+                </p>
+                <div class="flex flex-wrap justify-center gap-3 mb-6">
+                    <a href="#start-here" class="cta-btn bg-purple-600 hover:bg-purple-500 px-6 py-3 rounded-xl font-bold text-white">Start Here</a>
+                    <a href="#faucets" class="cta-btn bg-slate-800 hover:bg-slate-700 px-6 py-3 rounded-xl font-bold text-white border border-slate-600">View Faucet Sites</a>
+                </div>
+                <div class="flex flex-wrap justify-center gap-2 text-xs sm:text-sm">
+                    <span class="proof-chip rounded-full px-4 py-2">✅ Beginner friendly</span>
+                    <span class="proof-chip rounded-full px-4 py-2">⏱️ 10-minute setup</span>
+                    <span class="proof-chip rounded-full px-4 py-2">📈 Daily earning flow</span>
+                </div>
             </div>
-            
-            
         </header>
 
-        <!-- SECTION 1: Exchanges & Wallets -->
+        <section id="start-here" class="mb-12">
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="proof-chip rounded-2xl p-5">
+                    <p class="text-purple-300 font-bold mb-2">1) Create your wallet/exchange</p>
+                    <p class="text-sm text-slate-300">Use a reliable account first so withdrawals and tracking are easy.</p>
+                </div>
+                <div class="proof-chip rounded-2xl p-5">
+                    <p class="text-teal-300 font-bold mb-2">2) Pick 2-3 high-yield sites</p>
+                    <p class="text-sm text-slate-300">Focus on consistency instead of hopping between too many platforms.</p>
+                </div>
+                <div class="proof-chip rounded-2xl p-5">
+                    <p class="text-yellow-300 font-bold mb-2">3) Build your daily routine</p>
+                    <p class="text-sm text-slate-300">Claim, complete tasks, and reinvest your time where conversion is best.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="exchanges" class="mb-12">
             <div class="flex items-center mb-6">
                 <div class="category-badge text-4xl mr-4">🟣</div>
-                <h2 class="text-3xl font-bold text-purple-400 border-b border-purple-800 pb-3 flex-1">
-                    Exchanges & Wallets
-                </h2>
+                <h2 class="text-3xl font-bold text-purple-400 border-b border-purple-800 pb-3 flex-1">Exchanges & Wallets</h2>
             </div>
-            
+
             <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                 <a href="https://accounts.binance.com/register?ref=49685937" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-purple-700 to-purple-600 shadow-xl flex flex-col items-center justify-center text-center hover:from-purple-600 hover:to-purple-500">
                     <div class="text-2xl mb-2">🏦</div>
@@ -127,16 +172,6 @@
                     <span class="font-bold text-sm">MEXC</span>
                     <span class="text-xs opacity-80">Zero Fees</span>
                 </a>
-                <a href="https://bingx.com/invite/9NNUWM" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-purple-700 to-purple-600 shadow-xl flex flex-col items-center justify-center text-center hover:from-purple-600 hover:to-purple-500">
-                    <div class="text-2xl mb-2">📈</div>
-                    <span class="font-bold text-sm">BingX</span>
-                    <span class="text-xs opacity-80">Copy Trading</span>
-                </a>
-                <a href="https://payeer.com/?session=11397475" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-purple-700 to-purple-600 shadow-xl flex flex-col items-center justify-center text-center hover:from-purple-600 hover:to-purple-500">
-                    <div class="text-2xl mb-2">💳</div>
-                    <span class="font-bold text-sm">Payeer</span>
-                    <span class="text-xs opacity-80">Multi-Currency</span>
-                </a>
                 <a href="https://faucetpay.io/?r=95880" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-purple-700 to-purple-600 shadow-xl flex flex-col items-center justify-center text-center hover:from-purple-600 hover:to-purple-500">
                     <div class="text-2xl mb-2">🔄</div>
                     <span class="font-bold text-sm">FaucetPay</span>
@@ -145,208 +180,73 @@
             </div>
         </section>
 
-        <!-- SECTION 2: Premium Faucets -->
         <section class="mb-12">
             <div class="flex items-center mb-6">
                 <div class="category-badge text-4xl mr-4">🟢</div>
-                <h2 class="text-3xl font-bold text-teal-400 border-b border-teal-800 pb-3 flex-1">
-                    Premium Faucets
-                </h2>
+                <h2 class="text-3xl font-bold text-teal-400 border-b border-teal-800 pb-3 flex-1">Premium Faucets</h2>
             </div>
-            
+
             <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                <a href="https://cointiply.com/r/mOnqp" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400 glow">
-                    <div class="text-2xl mb-2">🎯</div>
-                    <span class="font-bold text-sm">Cointiply</span>
-                    <span class="text-xs opacity-80">Highest Paying</span>
-                </a>
-                <a href="https://www.coinpayu.com/?r=dashboard" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400">
-                    <div class="text-2xl mb-2">👁️</div>
-                    <span class="font-bold text-sm">CoinPayU</span>
-                    <span class="text-xs opacity-80">PTC & Faucet</span>
-                </a>
-                <a href="https://autofaucet.dutchycorp.space/?r=Autofaucets" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400">
-                    <div class="text-2xl mb-2">🤖</div>
-                    <span class="font-bold text-sm">DutchyCorp</span>
-                    <span class="text-xs opacity-80">Auto Faucet</span>
-                </a>
-                <a href="https://firefaucet.win/ref/126786" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400">
-                    <div class="text-2xl mb-2">🔥</div>
-                    <span class="font-bold text-sm">Fire Faucet</span>
-                    <span class="text-xs opacity-80">Auto/Manual</span>
-                </a>
-                <a href="https://freebitco.in/?r=17006348" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400">
-                    <div class="text-2xl mb-2">₿</div>
-                    <span class="font-bold text-sm">FreeBitco.in</span>
-                    <span class="text-xs opacity-80">Bitcoin only</span>
-                </a>
-                <a href="https://r.adbtc.top/1169353" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400">
-                    <div class="text-2xl mb-2">👀</div>
-                    <span class="font-bold text-sm">AdBTC</span>
-                    <span class="text-xs opacity-80">BTC PTC</span>
-                </a>
-                <a href="https://viefaucet.com?r=6380ee9189dc9d60cddeaf22" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400">
-                    <div class="text-2xl mb-2">🌟</div>
-                    <span class="font-bold text-sm">Viefaucet</span>
-                    <span class="text-xs opacity-80">Multi-Coin</span>
-                </a>
-                <a href="https://rollercoin.com/?r=kcq1472k" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400">
-                    <div class="text-2xl mb-2">⛏️</div>
-                    <span class="font-bold text-sm">RollerCoin</span>
-                    <span class="text-xs opacity-80">Mining Game</span>
-                </a>
-             
-                <a href="https://simplebits.io/ref/0rd4li1cSLTL" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400">
-                    <div class="text-2xl mb-2">⚙️</div>
-                    <span class="font-bold text-sm">SimpleBits</span>
-                    <span class="text-xs opacity-80">Mining</span>
-                </a>
+                <a href="https://cointiply.com/r/mOnqp" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400 glow"><div class="text-2xl mb-2">🎯</div><span class="font-bold text-sm">Cointiply</span><span class="text-xs opacity-80">Highest Paying</span></a>
+                <a href="https://www.coinpayu.com/?r=dashboard" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400"><div class="text-2xl mb-2">👁️</div><span class="font-bold text-sm">CoinPayU</span><span class="text-xs opacity-80">PTC & Faucet</span></a>
+                <a href="https://autofaucet.dutchycorp.space/?r=Autofaucets" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400"><div class="text-2xl mb-2">🤖</div><span class="font-bold text-sm">DutchyCorp</span><span class="text-xs opacity-80">Auto Faucet</span></a>
+                <a href="https://firefaucet.win/ref/126786" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400"><div class="text-2xl mb-2">🔥</div><span class="font-bold text-sm">Fire Faucet</span><span class="text-xs opacity-80">Auto/Manual</span></a>
+                <a href="https://freebitco.in/?r=17006348" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400"><div class="text-2xl mb-2">₿</div><span class="font-bold text-sm">FreeBitco.in</span><span class="text-xs opacity-80">Bitcoin only</span></a>
+                <a href="https://r.adbtc.top/1169353" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400"><div class="text-2xl mb-2">👀</div><span class="font-bold text-sm">AdBTC</span><span class="text-xs opacity-80">BTC PTC</span></a>
+                <a href="https://viefaucet.com?r=6380ee9189dc9d60cddeaf22" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400"><div class="text-2xl mb-2">🌟</div><span class="font-bold text-sm">Viefaucet</span><span class="text-xs opacity-80">Multi-Coin</span></a>
+                <a href="https://rollercoin.com/?r=kcq1472k" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400"><div class="text-2xl mb-2">⛏️</div><span class="font-bold text-sm">RollerCoin</span><span class="text-xs opacity-80">Mining Game</span></a>
+                <a href="https://simplebits.io/ref/0rd4li1cSLTL" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400"><div class="text-2xl mb-2">⚙️</div><span class="font-bold text-sm">SimpleBits</span><span class="text-xs opacity-80">Mining</span></a>
             </div>
         </section>
 
-        <!-- SECTION 3: Free Faucet Family -->
         <section id="faucets" class="mb-12">
             <div class="flex items-center mb-6">
                 <div class="category-badge text-4xl mr-4">🔵</div>
-                <h2 class="text-3xl font-bold text-blue-400 border-b border-blue-800 pb-3 flex-1">
-                    Free Faucet Family
-                </h2>
+                <h2 class="text-3xl font-bold text-blue-400 border-b border-blue-800 pb-3 flex-1">Free Faucet Family</h2>
             </div>
-          
+
             <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                <a href="https://freebch.in?ref=GYbcNKDvc8" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow">
-                    <div class="text-2xl mb-2">💚</div>
-                    <span class="font-bold text-sm">FreeBCH</span>
-                    <span class="text-xs opacity-80">Bitcoin Cash</span>
-                </a>
-                <a href="https://freebnb.in?ref=t3guZH6504" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow">
-                    <div class="text-2xl mb-2">🏠</div>
-                    <span class="font-bold text-sm">FreeBNB</span>
-                    <span class="text-xs opacity-80">Binance Coin</span>
-                </a>
-                <a href="https://freearb.in?ref=DT-wOppZxs" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow">
-                    <div class="text-2xl mb-2">🔗</div>
-                    <span class="font-bold text-sm">FreeARB</span>
-                    <span class="text-xs opacity-80">Arbitrum</span>
-                </a>
-                <a href="https://freeshib.in?ref=Q4gBET4aub" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow">
-                    <div class="text-2xl mb-2">🐕</div>
-                    <span class="font-bold text-sm">FreeSHIB</span>
-                    <span class="text-xs opacity-80">Shiba Inu</span>
-                </a>
-                <a href="https://freesui.in?ref=2OBNF6surV" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow">
-                    <div class="text-2xl mb-2">💧</div>
-                    <span class="font-bold text-sm">FreeSUI</span>
-                    <span class="text-xs opacity-80">Sui Network</span>
-                </a>
-                <a href="https://freetoncoin.in?ref=4oDtavonot" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow">
-                    <div class="text-2xl mb-2">💎</div>
-                    <span class="font-bold text-sm">FreeTONcoin</span>
-                    <span class="text-xs opacity-80">Toncoin</span>
-                </a>
-                <a href="https://freetron.in?ref=D96wTKmOPD" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow">
-                    <div class="text-2xl mb-2">⚡</div>
-                    <span class="font-bold text-sm">FreeTRON</span>
-                    <span class="text-xs opacity-80">TRX</span>
-                </a>
-                <a href="https://freexrp.in?ref=sKqECBxDCJ" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow">
-                    <div class="text-2xl mb-2">🌊</div>
-                    <span class="font-bold text-sm">FreeXRP</span>
-                    <span class="text-xs opacity-80">Ripple</span>
-                </a>
+                <a href="https://freebch.in?ref=GYbcNKDvc8" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow"><div class="text-2xl mb-2">💚</div><span class="font-bold text-sm">FreeBCH</span><span class="text-xs opacity-80">Bitcoin Cash</span></a>
+                <a href="https://freebnb.in?ref=t3guZH6504" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow"><div class="text-2xl mb-2">🏠</div><span class="font-bold text-sm">FreeBNB</span><span class="text-xs opacity-80">Binance Coin</span></a>
+                <a href="https://freearb.in?ref=DT-wOppZxs" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow"><div class="text-2xl mb-2">🔗</div><span class="font-bold text-sm">FreeARB</span><span class="text-xs opacity-80">Arbitrum</span></a>
+                <a href="https://freeshib.in?ref=Q4gBET4aub" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow"><div class="text-2xl mb-2">🐕</div><span class="font-bold text-sm">FreeSHIB</span><span class="text-xs opacity-80">Shiba Inu</span></a>
+                <a href="https://freesui.in?ref=2OBNF6surV" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow"><div class="text-2xl mb-2">💧</div><span class="font-bold text-sm">FreeSUI</span><span class="text-xs opacity-80">Sui Network</span></a>
+                <a href="https://freetoncoin.in?ref=4oDtavonot" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow"><div class="text-2xl mb-2">💎</div><span class="font-bold text-sm">FreeTONcoin</span><span class="text-xs opacity-80">Toncoin</span></a>
+                <a href="https://freetron.in?ref=D96wTKmOPD" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow"><div class="text-2xl mb-2">⚡</div><span class="font-bold text-sm">FreeTRON</span><span class="text-xs opacity-80">TRX</span></a>
+                <a href="https://freexrp.in?ref=sKqECBxDCJ" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow"><div class="text-2xl mb-2">🌊</div><span class="font-bold text-sm">FreeXRP</span><span class="text-xs opacity-80">Ripple</span></a>
             </div>
         </section>
 
-        <!-- SECTION 4: Pick Faucet Network -->
         <section class="mb-12">
             <div class="flex items-center mb-6">
                 <div class="category-badge text-4xl mr-4">🟠</div>
-                <h2 class="text-3xl font-bold text-orange-400 border-b border-orange-800 pb-3 flex-1">
-                    Pick Faucet Network
-                </h2>
+                <h2 class="text-3xl font-bold text-orange-400 border-b border-orange-800 pb-3 flex-1">Pick Faucet Network</h2>
             </div>
-           
+
             <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                <a href="https://dogepick.io/?ref=limana" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow">
-                    <div class="text-2xl mb-2">🐕</div>
-                    <span class="font-bold text-sm">DogePick</span>
-                    <span class="text-xs opacity-80">DOGE</span>
-                </a>
-                <a href="https://litepick.io/?ref=source" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow">
-                    <div class="text-2xl mb-2">🪙</div>
-                    <span class="font-bold text-sm">LitePick</span>
-                    <span class="text-xs opacity-80">LTC</span>
-                </a>
-                <a href="https://polpick.io/?ref=dashboard" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow">
-                    <div class="text-2xl mb-2">⬟</div>
-                    <span class="font-bold text-sm">POLpick</span>
-                    <span class="text-xs opacity-80">Polygon</span>
-                </a>
-                <a href="https://solpick.io/?ref=dashboard" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow">
-                    <div class="text-2xl mb-2">☀️</div>
-                    <span class="font-bold text-sm">SOLpick</span>
-                    <span class="text-xs opacity-80">Solana</span>
-                </a>
-                <a href="https://suipick.io/?ref=dashboard" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow">
-                    <div class="text-2xl mb-2">💎</div>
-                    <span class="font-bold text-sm">SUIpick</span>
-                    <span class="text-xs opacity-80">Sui</span>
-                </a>
-                <a href="https://tonpick.game/?ref=dashboard" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow">
-                    <div class="text-2xl mb-2">🎮</div>
-                    <span class="font-bold text-sm">TONpick</span>
-                    <span class="text-xs opacity-80">TON</span>
-                </a>
-                <a href="https://usdpick.io?ref=fAYHy9teXq" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow">
-                    <div class="text-2xl mb-2">💵</div>
-                    <span class="font-bold text-sm">USDpick</span>
-                    <span class="text-xs opacity-80">Stablecoin</span>
-                </a>
+                <a href="https://dogepick.io/?ref=limana" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow"><div class="text-2xl mb-2">🐕</div><span class="font-bold text-sm">DogePick</span><span class="text-xs opacity-80">DOGE</span></a>
+                <a href="https://litepick.io/?ref=source" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow"><div class="text-2xl mb-2">🪙</div><span class="font-bold text-sm">LitePick</span><span class="text-xs opacity-80">LTC</span></a>
+                <a href="https://polpick.io/?ref=dashboard" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow"><div class="text-2xl mb-2">⬟</div><span class="font-bold text-sm">POLpick</span><span class="text-xs opacity-80">Polygon</span></a>
+                <a href="https://solpick.io/?ref=dashboard" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow"><div class="text-2xl mb-2">☀️</div><span class="font-bold text-sm">SOLpick</span><span class="text-xs opacity-80">Solana</span></a>
+                <a href="https://suipick.io/?ref=dashboard" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow"><div class="text-2xl mb-2">💎</div><span class="font-bold text-sm">SUIpick</span><span class="text-xs opacity-80">Sui</span></a>
+                <a href="https://tonpick.game/?ref=dashboard" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow"><div class="text-2xl mb-2">🎮</div><span class="font-bold text-sm">TONpick</span><span class="text-xs opacity-80">TON</span></a>
+                <a href="https://usdpick.io?ref=fAYHy9teXq" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow"><div class="text-2xl mb-2">💵</div><span class="font-bold text-sm">USDpick</span><span class="text-xs opacity-80">Stablecoin</span></a>
             </div>
         </section>
 
-        <!-- SECTION 5: GPT & Task Sites -->
         <section class="mb-12">
             <div class="flex items-center mb-6">
                 <div class="category-badge text-4xl mr-4">🟡</div>
-                <h2 class="text-3xl font-bold text-yellow-400 border-b border-yellow-800 pb-3 flex-1">
-                    GPT & Task Sites
-                </h2>
+                <h2 class="text-3xl font-bold text-yellow-400 border-b border-yellow-800 pb-3 flex-1">GPT & Task Sites</h2>
             </div>
-           
+
             <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            
-                <a href="https://pawns.app/?r=1112465" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-yellow-600 to-yellow-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-yellow-500 hover:to-yellow-400 glow">
-                    <div class="text-2xl mb-2">🌐</div>
-                    <span class="font-bold text-sm">Pawns.app</span>
-                    <span class="text-xs opacity-80">Passive Income</span>
-                </a>
-                <a href="https://everve.net/ref/678797/" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-yellow-600 to-yellow-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-yellow-500 hover:to-yellow-400 glow">
-                    <div class="text-2xl mb-2">📱</div>
-                    <span class="font-bold text-sm">Everve</span>
-                    <span class="text-xs opacity-80">Social Tasks</span>
-                </a>
-                <a href="https://surfe.be/ext/178882" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-yellow-600 to-yellow-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-yellow-500 hover:to-yellow-400 glow">
-                    <div class="text-2xl mb-2">📺</div>
-                    <span class="font-bold text-sm">Surfe.be</span>
-                    <span class="text-xs opacity-80">Ad Viewing</span>
-                </a>
-                <a href="https://freeward.net/ref/7pex8" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-yellow-600 to-yellow-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-yellow-500 hover:to-yellow-400 glow">
-                    <div class="text-2xl mb-2">🎁</div>
-                    <span class="font-bold text-sm">Freeward</span>
-                    <span class="text-xs opacity-80">Rewards</span>
-                </a>
-                <a href="https://2captcha.com/?from=9690712" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-yellow-600 to-yellow-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-yellow-500 hover:to-yellow-400 glow">
-                    <div class="text-2xl mb-2">🤖</div>
-                    <span class="font-bold text-sm">2Captcha</span>
-                    <span class="text-xs opacity-80">Captcha Solver</span>
-                </a>
+                <a href="https://pawns.app/?r=1112465" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-yellow-600 to-yellow-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-yellow-500 hover:to-yellow-400 glow"><div class="text-2xl mb-2">🌐</div><span class="font-bold text-sm">Pawns.app</span><span class="text-xs opacity-80">Passive Income</span></a>
+                <a href="https://everve.net/ref/678797/" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-yellow-600 to-yellow-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-yellow-500 hover:to-yellow-400 glow"><div class="text-2xl mb-2">📱</div><span class="font-bold text-sm">Everve</span><span class="text-xs opacity-80">Social Tasks</span></a>
+                <a href="https://freeward.net/ref/7pex8" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-yellow-600 to-yellow-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-yellow-500 hover:to-yellow-400 glow"><div class="text-2xl mb-2">🎁</div><span class="font-bold text-sm">Freeward</span><span class="text-xs opacity-80">Rewards</span></a>
+                <a href="https://www.idle-empire.com?r=ynao0t" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-yellow-600 to-yellow-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-yellow-500 hover:to-yellow-400 glow"><div class="text-2xl mb-2">🕹️</div><span class="font-bold text-sm">Idle-Empire</span><span class="text-xs opacity-80">Offer Walls</span></a>
             </div>
         </section>
-
-       
-
     </div>
-
 </body>
 </html>
