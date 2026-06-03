@@ -1,251 +1,513 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚡ Crypto Earning Hub - Earn Free Crypto Daily</title>
+    <title>⚡ Terminal Earning Hub | High-Density Crypto Resource Matrix</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace']
+                    },
+                    colors: {
+                        panel: '#0d1117',
+                        surface: '#161b22',
+                        borderClr: '#30363d',
+                        cyanAccent: '#00F5FF',
+                        pinkAccent: '#FF007A'
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
-
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            background-color: #090d13;
             color: #c9d1d9;
-            min-height: 100vh;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0d1117;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 2px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #00F5FF;
         }
 
-        .gradient-text {
-            background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .link-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-decoration: none;
-            color: white;
-            display: block;
-            position: relative;
-            overflow: hidden;
-            min-height: 5rem;
-        }
-
-        .link-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .link-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.6s;
-        }
-
-        .link-card:hover::before {
-            left: 100%;
-        }
-
-        .category-badge {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .hero-panel {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.18), rgba(236, 72, 153, 0.12));
-            border: 1px solid rgba(139, 92, 246, 0.35);
-            backdrop-filter: blur(8px);
-        }
-
-        .cta-btn {
-            transition: all 0.25s ease;
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 16px 30px rgba(139, 92, 246, 0.35);
-        }
-
-        .proof-chip {
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            background: rgba(255, 255, 255, 0.03);
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .glow {
-            box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
-        }
-
-        .floating-shapes {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .shape {
-            position: absolute;
-            opacity: 0.05;
-            animation: float-shape 20s infinite;
-        }
-
-        @keyframes float-shape {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(30px, -30px) rotate(120deg); }
-            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        .matrix-row:hover {
+            background: rgba(0, 245, 255, 0.03);
+            border-color: rgba(0, 245, 255, 0.3) !important;
         }
     </style>
 </head>
-<body class="p-4 sm:p-6 md:p-8 relative">
+<body class="p-2 sm:p-4 min-height-screen flex flex-col justify-between text-xs selection:bg-cyanAccent selection:text-black">
 
-    <div class="floating-shapes">
-        <div class="shape text-8xl top-10 left-10">💎</div>
-        <div class="shape text-6xl top-40 right-20">🚀</div>
-        <div class="shape text-7xl bottom-20 left-1/4">💰</div>
-        <div class="shape text-5xl bottom-40 right-1/3">⚡</div>
-    </div>
-
-    <div class="max-w-7xl mx-auto">
-        <header class="text-center mb-12 sm:mb-16 pt-8">
-            <div class="hero-panel rounded-3xl p-6 sm:p-10">
-                <p class="uppercase tracking-[0.25em] text-xs text-purple-300 mb-3">Top crypto earning opportunities</p>
-                <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-4">
-                    Earn Daily With <span class="gradient-text">Trusted Crypto Platforms</span>
+    <header class="max-w-[1600px] w-full mx-auto mb-3 border border-borderClr bg-panel p-3 rounded shadow-sm">
+        <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3">
+            <div>
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="inline-block w-2 h-2 rounded-full bg-cyanAccent animate-pulse"></span>
+                    <span class="font-mono text-[10px] uppercase tracking-wider text-slate-400">Yield Optimization Engine v4.26</span>
+                </div>
+                <h1 class="text-base sm:text-lg font-bold tracking-tight text-white flex items-center gap-2">
+                    Crypto Earning Matrix <span class="text-xs font-mono font-normal text-cyanAccent bg-cyanAccent/10 px-1.5 py-0.5 rounded border border-cyanAccent/20">LIVE ROUTER</span>
                 </h1>
-                <p class="text-sm sm:text-lg text-slate-300 max-w-3xl mx-auto mb-6">
-                    Start with beginner-friendly sites, stack small wins daily, and scale into bigger rewards. Everything below is organized so new users can sign up fast and stay active.
+                <p class="text-slate-400 mt-0.5 max-w-2xl text-[11px] leading-relaxed">
+                    Aggregated micro-earning pipelines and faucet arrays. Maximize conversion latency by retaining 2-3 persistent terminal points simultaneously. 
                 </p>
-                <div class="flex flex-wrap justify-center gap-3 mb-6">
-                    <a href="#start-here" class="cta-btn bg-purple-600 hover:bg-purple-500 px-6 py-3 rounded-xl font-bold text-white">Start Here</a>
-                    <a href="#faucets" class="cta-btn bg-slate-800 hover:bg-slate-700 px-6 py-3 rounded-xl font-bold text-white border border-slate-600">View Faucet Sites</a>
-                </div>
-                <div class="flex flex-wrap justify-center gap-2 text-xs sm:text-sm">
-                    <span class="proof-chip rounded-full px-4 py-2">✅ Beginner friendly</span>
-                    <span class="proof-chip rounded-full px-4 py-2">⏱️ 10-minute setup</span>
-                    <span class="proof-chip rounded-full px-4 py-2">📈 Daily earning flow</span>
-                </div>
             </div>
-        </header>
 
-        <section id="start-here" class="mb-12">
-            <div class="grid md:grid-cols-3 gap-4">
-                <div class="proof-chip rounded-2xl p-5">
-                    <p class="text-purple-300 font-bold mb-2">1) Create your wallet/exchange</p>
-                    <p class="text-sm text-slate-300">Use a reliable account first so withdrawals and tracking are easy.</p>
+            <div class="w-full lg:w-auto flex flex-wrap items-center gap-2">
+                <div class="bg-surface border border-borderClr p-2 rounded flex-1 lg:flex-none min-w-[100px]">
+                    <div class="text-[10px] font-mono text-slate-500 uppercase">System Status</div>
+                    <div class="font-semibold text-emerald-400 flex items-center gap-1 mt-0.5">
+                        Operational <span>✓</span>
+                    </div>
                 </div>
-                <div class="proof-chip rounded-2xl p-5">
-                    <p class="text-teal-300 font-bold mb-2">2) Pick 2-3 high-yield sites</p>
-                    <p class="text-sm text-slate-300">Focus on consistency instead of hopping between too many platforms.</p>
+                <div class="bg-surface border border-borderClr p-2 rounded flex-1 lg:flex-none min-w-[100px]">
+                    <div class="text-[10px] font-mono text-slate-500 uppercase">Active Hubs</div>
+                    <div class="font-semibold text-white font-mono mt-0.5">30 Verified</div>
                 </div>
-                <div class="proof-chip rounded-2xl p-5">
-                    <p class="text-yellow-300 font-bold mb-2">3) Build your daily routine</p>
-                    <p class="text-sm text-slate-300">Claim, complete tasks, and reinvest your time where conversion is best.</p>
+                <div class="bg-surface border border-borderClr p-2 rounded flex-1 lg:flex-none min-w-[120px]">
+                    <div class="text-[10px] font-mono text-slate-500 uppercase">Est. Optimization</div>
+                    <div class="font-semibold text-cyanAccent font-mono mt-0.5">Max Compounding</div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section id="exchanges" class="mb-12">
-            <div class="flex items-center mb-6">
-                <div class="category-badge text-4xl mr-4">🟣</div>
-                <h2 class="text-3xl font-bold text-purple-400 border-b border-purple-800 pb-3 flex-1">Exchanges & Wallets</h2>
+        <div class="mt-3 pt-3 border-t border-borderClr/60 flex flex-col sm:flex-row gap-2 items-center justify-between">
+            <div class="relative w-full sm:w-72">
+                <input type="text" id="matrixSearch" onkeyup="filterMatrix()" placeholder="Filter node matrix (e.g. BTC, Solana, Faucet)..." class="w-full bg-surface border border-borderClr rounded px-2.5 py-1.5 font-mono text-[11px] focus:outline-none focus:border-cyanAccent transition-colors text-white placeholder-slate-500">
+                <span class="absolute right-2 top-2 text-[10px] font-mono text-slate-500">/</span>
+            </div>
+            <div class="flex flex-wrap gap-1 w-full sm:w-auto justify-end font-mono text-[10px]">
+                <button onclick="filterCategory('all')" class="bg-borderClr/40 border border-borderClr hover:border-slate-500 px-2 py-1 rounded text-white font-medium transition-colors">All Nodes</button>
+                <button onclick="filterCategory('exchange')" class="bg-borderClr/40 border border-borderClr hover:border-purple-500 px-2 py-1 rounded text-purple-400 font-medium transition-colors">Exchanges</button>
+                <button onclick="filterCategory('premium')" class="bg-borderClr/40 border border-borderClr hover:border-teal-500 px-2 py-1 rounded text-teal-400 font-medium transition-colors">Premium</button>
+                <button onclick="filterCategory('family')" class="bg-borderClr/40 border border-borderClr hover:border-blue-500 px-2 py-1 rounded text-blue-400 font-medium transition-colors">Faucet Family</button>
+                <button onclick="filterCategory('pick')" class="bg-borderClr/40 border border-borderClr hover:border-orange-500 px-2 py-1 rounded text-orange-400 font-medium transition-colors">Pick Network</button>
+                <button onclick="filterCategory('task')" class="bg-borderClr/40 border border-borderClr hover:border-yellow-500 px-2 py-1 rounded text-yellow-400 font-medium transition-colors">Task Platforms</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-[1600px] w-full mx-auto grid grid-cols-1 xl:grid-cols-4 gap-3 items-start flex-1">
+        
+        <section class="xl:col-span-1 bg-panel border border-borderClr rounded p-3 sticky top-2">
+            <h2 class="text-xs font-mono font-bold uppercase tracking-wider text-white border-b border-borderClr pb-2 mb-2 flex items-center justify-between">
+                <span>Execution Protocols</span>
+                <span class="text-slate-500 font-normal">[01-03]</span>
+            </h2>
+            
+            <div class="space-y-2">
+                <div class="bg-surface border border-borderClr/80 p-2.5 rounded hover:border-purple-500/50 transition-colors">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono text-[11px] font-bold text-purple-400 bg-purple-500/10 px-1 rounded">01</span>
+                        <h3 class="font-bold text-white text-[11px]">Deploy Tier-1 Micro Wallet</h3>
+                    </div>
+                    <p class="text-slate-400 text-[11px] leading-normal">
+                        Initialize accounts on core routers (<span class="text-slate-200 underline font-mono">FaucetPay</span> & <span class="text-slate-200 underline font-mono">Binance</span>) to aggregate small outputs without handling excessive transaction overhead.
+                    </p>
+                </div>
+
+                <div class="bg-surface border border-borderClr/80 p-2.5 rounded hover:border-teal-500/50 transition-colors">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono text-[11px] font-bold text-teal-400 bg-teal-500/10 px-1 rounded">02</span>
+                        <h3 class="font-bold text-white text-[11px]">Consolidate Operational Scope</h3>
+                    </div>
+                    <p class="text-slate-400 text-[11px] leading-normal">
+                        Diversifying across too many portals causes yield leakage. Isolate 2 or 3 premium pipelines and optimize execution daily for maximum payouts.
+                    </p>
+                </div>
+
+                <div class="bg-surface border border-borderClr/80 p-2.5 rounded hover:border-yellow-500/50 transition-colors">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono text-[11px] font-bold text-yellow-400 bg-yellow-500/10 px-1 rounded">03</span>
+                        <h3 class="font-bold text-white text-[11px]">Automate Staking Routine</h3>
+                    </div>
+                    <p class="text-slate-400 text-[11px] leading-normal">
+                        Extract rewards via rapid-claim intervals, convert inside micro-wallets directly to low-fee utility tokens, and re-allocate into compound structures.
+                    </p>
+                </div>
             </div>
 
-            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                <a href="https://accounts.binance.com/register?ref=49685937" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-purple-700 to-purple-600 shadow-xl flex flex-col items-center justify-center text-center hover:from-purple-600 hover:to-purple-500">
-                    <div class="text-2xl mb-2">🏦</div>
-                    <span class="font-bold text-sm">Binance</span>
-                    <span class="text-xs opacity-80">Major Exchange</span>
-                </a>
-                <a href="https://www.mexc.com/auth/signup?inviteCode=2pLgC" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-purple-700 to-purple-600 shadow-xl flex flex-col items-center justify-center text-center hover:from-purple-600 hover:to-purple-500">
-                    <div class="text-2xl mb-2">📊</div>
-                    <span class="font-bold text-sm">MEXC</span>
-                    <span class="text-xs opacity-80">Zero Fees</span>
-                </a>
-                <a href="https://faucetpay.io/?r=95880" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-purple-700 to-purple-600 shadow-xl flex flex-col items-center justify-center text-center hover:from-purple-600 hover:to-purple-500">
-                    <div class="text-2xl mb-2">🔄</div>
-                    <span class="font-bold text-sm">FaucetPay</span>
-                    <span class="text-xs opacity-80">Micro Wallet</span>
-                </a>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <div class="flex items-center mb-6">
-                <div class="category-badge text-4xl mr-4">🟢</div>
-                <h2 class="text-3xl font-bold text-teal-400 border-b border-teal-800 pb-3 flex-1">Premium Faucets</h2>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                <a href="https://cointiply.com/r/mOnqp" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400 glow"><div class="text-2xl mb-2">🎯</div><span class="font-bold text-sm">Cointiply</span><span class="text-xs opacity-80">Highest Paying</span></a>
-                <a href="https://www.coinpayu.com/?r=dashboard" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400"><div class="text-2xl mb-2">👁️</div><span class="font-bold text-sm">CoinPayU</span><span class="text-xs opacity-80">PTC & Faucet</span></a>
-                <a href="https://autofaucet.dutchycorp.space/?r=Autofaucets" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400"><div class="text-2xl mb-2">🤖</div><span class="font-bold text-sm">DutchyCorp</span><span class="text-xs opacity-80">Auto Faucet</span></a>
-                <a href="https://firefaucet.win/ref/126786" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400"><div class="text-2xl mb-2">🔥</div><span class="font-bold text-sm">Fire Faucet</span><span class="text-xs opacity-80">Auto/Manual</span></a>
-                <a href="https://freebitco.in/?r=17006348" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400"><div class="text-2xl mb-2">₿</div><span class="font-bold text-sm">FreeBitco.in</span><span class="text-xs opacity-80">Bitcoin only</span></a>
-                <a href="https://r.adbtc.top/1169353" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400"><div class="text-2xl mb-2">👀</div><span class="font-bold text-sm">AdBTC</span><span class="text-xs opacity-80">BTC PTC</span></a>
-                <a href="https://viefaucet.com?r=6380ee9189dc9d60cddeaf22" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400"><div class="text-2xl mb-2">🌟</div><span class="font-bold text-sm">Viefaucet</span><span class="text-xs opacity-80">Multi-Coin</span></a>
-                <a href="https://rollercoin.com/?r=kcq1472k" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400"><div class="text-2xl mb-2">⛏️</div><span class="font-bold text-sm">RollerCoin</span><span class="text-xs opacity-80">Mining Game</span></a>
-                <a href="https://simplebits.io/ref/0rd4li1cSLTL" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-teal-500 hover:to-teal-400"><div class="text-2xl mb-2">⚙️</div><span class="font-bold text-sm">SimpleBits</span><span class="text-xs opacity-80">Mining</span></a>
-            </div>
-        </section>
-
-        <section id="faucets" class="mb-12">
-            <div class="flex items-center mb-6">
-                <div class="category-badge text-4xl mr-4">🔵</div>
-                <h2 class="text-3xl font-bold text-blue-400 border-b border-blue-800 pb-3 flex-1">Free Faucet Family</h2>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                <a href="https://freebch.in?ref=GYbcNKDvc8" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow"><div class="text-2xl mb-2">💚</div><span class="font-bold text-sm">FreeBCH</span><span class="text-xs opacity-80">Bitcoin Cash</span></a>
-                <a href="https://freebnb.in?ref=t3guZH6504" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow"><div class="text-2xl mb-2">🏠</div><span class="font-bold text-sm">FreeBNB</span><span class="text-xs opacity-80">Binance Coin</span></a>
-                <a href="https://freearb.in?ref=DT-wOppZxs" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow"><div class="text-2xl mb-2">🔗</div><span class="font-bold text-sm">FreeARB</span><span class="text-xs opacity-80">Arbitrum</span></a>
-                <a href="https://freeshib.in?ref=Q4gBET4aub" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow"><div class="text-2xl mb-2">🐕</div><span class="font-bold text-sm">FreeSHIB</span><span class="text-xs opacity-80">Shiba Inu</span></a>
-                <a href="https://freesui.in?ref=2OBNF6surV" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow"><div class="text-2xl mb-2">💧</div><span class="font-bold text-sm">FreeSUI</span><span class="text-xs opacity-80">Sui Network</span></a>
-                <a href="https://freetoncoin.in?ref=4oDtavonot" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow"><div class="text-2xl mb-2">💎</div><span class="font-bold text-sm">FreeTONcoin</span><span class="text-xs opacity-80">Toncoin</span></a>
-                <a href="https://freetron.in?ref=D96wTKmOPD" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow"><div class="text-2xl mb-2">⚡</div><span class="font-bold text-sm">FreeTRON</span><span class="text-xs opacity-80">TRX</span></a>
-                <a href="https://freexrp.in?ref=sKqECBxDCJ" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-blue-500 hover:to-blue-400 glow"><div class="text-2xl mb-2">🌊</div><span class="font-bold text-sm">FreeXRP</span><span class="text-xs opacity-80">Ripple</span></a>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <div class="flex items-center mb-6">
-                <div class="category-badge text-4xl mr-4">🟠</div>
-                <h2 class="text-3xl font-bold text-orange-400 border-b border-orange-800 pb-3 flex-1">Pick Faucet Network</h2>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                <a href="https://dogepick.io/?ref=limana" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow"><div class="text-2xl mb-2">🐕</div><span class="font-bold text-sm">DogePick</span><span class="text-xs opacity-80">DOGE</span></a>
-                <a href="https://litepick.io/?ref=source" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow"><div class="text-2xl mb-2">🪙</div><span class="font-bold text-sm">LitePick</span><span class="text-xs opacity-80">LTC</span></a>
-                <a href="https://polpick.io/?ref=dashboard" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow"><div class="text-2xl mb-2">⬟</div><span class="font-bold text-sm">POLpick</span><span class="text-xs opacity-80">Polygon</span></a>
-                <a href="https://solpick.io/?ref=dashboard" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow"><div class="text-2xl mb-2">☀️</div><span class="font-bold text-sm">SOLpick</span><span class="text-xs opacity-80">Solana</span></a>
-                <a href="https://suipick.io/?ref=dashboard" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow"><div class="text-2xl mb-2">💎</div><span class="font-bold text-sm">SUIpick</span><span class="text-xs opacity-80">Sui</span></a>
-                <a href="https://tonpick.game/?ref=dashboard" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow"><div class="text-2xl mb-2">🎮</div><span class="font-bold text-sm">TONpick</span><span class="text-xs opacity-80">TON</span></a>
-                <a href="https://usdpick.io?ref=fAYHy9teXq" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-orange-500 hover:to-orange-400 glow"><div class="text-2xl mb-2">💵</div><span class="font-bold text-sm">USDpick</span><span class="text-xs opacity-80">Stablecoin</span></a>
+            <div class="mt-3 p-2 bg-pinkAccent/5 border border-pinkAccent/20 rounded font-mono text-[10px] text-pinkAccent/90 leading-tight">
+                <strong>⚡ CRO CONVERSION RULE:</strong> Keep multiple tabs active concurrently. Minimize friction variables by avoiding complex sign-on routines.
             </div>
         </section>
 
-        <section class="mb-12">
-            <div class="flex items-center mb-6">
-                <div class="category-badge text-4xl mr-4">🟡</div>
-                <h2 class="text-3xl font-bold text-yellow-400 border-b border-yellow-800 pb-3 flex-1">GPT & Task Sites</h2>
+        <section class="xl:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-3">
+            
+            <div class="bg-panel border border-borderClr rounded p-2 category-group" data-cat="exchange">
+                <div class="border-b border-borderClr pb-1.5 mb-2 flex items-center justify-between px-1">
+                    <h2 class="font-mono font-bold text-purple-400 uppercase tracking-tight flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                        Exchanges &amp; Critical Gateways
+                    </h2>
+                    <span class="font-mono text-[10px] text-slate-500">3 Nodes Loaded</span>
+                </div>
+                <div class="space-y-1">
+                    <a href="https://accounts.binance.com/register?ref=49685937" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-2 flex items-center justify-between transition-all">
+                        <div class="flex items-center gap-3">
+                            <span class="text-sm">🏦</span>
+                            <div>
+                                <h3 class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors">Binance Global</h3>
+                                <div class="text-[10px] text-slate-400 font-mono mt-0.5">Primary Global Fiat-Crypto Exchange Router</div>
+                            </div>
+                        </div>
+                        <div class="text-right font-mono text-[10px]">
+                            <span class="text-purple-400 bg-purple-500/10 px-1 rounded border border-purple-500/20">TIER-1 CORE</span>
+                            <div class="text-slate-500 mt-0.5">Ref: 49685937</div>
+                        </div>
+                    </a>
+                    <a href="https://www.mexc.com/auth/signup?inviteCode=2pLgC" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-2 flex items-center justify-between transition-all">
+                        <div class="flex items-center gap-3">
+                            <span class="text-sm">📊</span>
+                            <div>
+                                <h3 class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors">MEXC Pro</h3>
+                                <div class="text-[10px] text-slate-400 font-mono mt-0.5">Zero Maker Fees &amp; Micro Ecosystem Support</div>
+                            </div>
+                        </div>
+                        <div class="text-right font-mono text-[10px]">
+                            <span class="text-purple-400 bg-purple-500/10 px-1 rounded border border-purple-500/20">0% FEES</span>
+                            <div class="text-slate-500 mt-0.5">Ref: 2pLgC</div>
+                        </div>
+                    </a>
+                    <a href="https://faucetpay.io/?r=95880" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-2 flex items-center justify-between transition-all">
+                        <div class="flex items-center gap-3">
+                            <span class="text-sm">🔄</span>
+                            <div>
+                                <h3 class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors">FaucetPay Hub</h3>
+                                <div class="text-[10px] text-slate-400 font-mono mt-0.5">Micro-payment Settlement Engine Ledger</div>
+                            </div>
+                        </div>
+                        <div class="text-right font-mono text-[10px]">
+                            <span class="text-emerald-400 bg-emerald-500/10 px-1 rounded border border-emerald-500/20">INSTANT TRK</span>
+                            <div class="text-slate-500 mt-0.5">Ref: 95880</div>
+                        </div>
+                    </a>
+                </div>
             </div>
 
-            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                <a href="https://pawns.app/?r=1112465" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-yellow-600 to-yellow-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-yellow-500 hover:to-yellow-400 glow"><div class="text-2xl mb-2">🌐</div><span class="font-bold text-sm">Pawns.app</span><span class="text-xs opacity-80">Passive Income</span></a>
-                <a href="https://everve.net/ref/678797/" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-yellow-600 to-yellow-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-yellow-500 hover:to-yellow-400 glow"><div class="text-2xl mb-2">📱</div><span class="font-bold text-sm">Everve</span><span class="text-xs opacity-80">Social Tasks</span></a>
-                <a href="https://freeward.net/ref/7pex8" target="_blank" class="link-card p-4 rounded-2xl bg-gradient-to-br from-yellow-600 to-yellow-500 shadow-xl flex flex-col items-center justify-center text-center hover:from-yellow-500 hover:to-yellow-400 glow"><div class="text-2xl mb-2">🎁</div><span class="font-bold text-sm">Freeward</span><span class="text-xs opacity-80">Rewards</span></a>
+            <div class="bg-panel border border-borderClr rounded p-2 category-group" data-cat="premium">
+                <div class="border-b border-borderClr pb-1.5 mb-2 flex items-center justify-between px-1">
+                    <h2 class="font-mono font-bold text-teal-400 uppercase tracking-tight flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
+                        Premium Faucet Configurations
+                    </h2>
+                    <span class="font-mono text-[10px] text-slate-500">9 Nodes Loaded</span>
+                </div>
+                <div class="space-y-1 max-h-[300px] overflow-y-auto custom-scrollbar pr-1">
+                    <a href="https://cointiply.com/r/mOnqp" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-1.5 flex items-center justify-between transition-all">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs">🎯</span>
+                            <div>
+                                <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors text-[11px]">Cointiply Matrix</span>
+                                <span class="text-[10px] font-mono text-teal-400 ml-1 bg-teal-500/10 px-1 rounded">Highest Yield</span>
+                            </div>
+                        </div>
+                        <span class="font-mono text-[10px] text-slate-500">Multi-Asset Router</span>
+                    </a>
+                    <a href="https://www.coinpayu.com/?r=dashboard" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-1.5 flex items-center justify-between transition-all">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs">👁️</span>
+                            <div>
+                                <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors text-[11px]">CoinPayU Portal</span>
+                                <span class="text-[10px] font-mono text-slate-400 ml-1">PTC Array</span>
+                            </div>
+                        </div>
+                        <span class="font-mono text-[10px] text-slate-500">Direct Stack</span>
+                    </a>
+                    <a href="https://autofaucet.dutchycorp.space/?r=Autofaucets" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-1.5 flex items-center justify-between transition-all">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs">🤖</span>
+                            <div>
+                                <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors text-[11px]">DutchyCorp Engine</span>
+                                <span class="text-[10px] font-mono text-amber-400 ml-1 bg-amber-500/10 px-1 rounded">Automation</span>
+                            </div>
+                        </div>
+                        <span class="font-mono text-[10px] text-slate-500">Multi-Token Script</span>
+                    </a>
+                    <a href="https://firefaucet.win/ref/126786" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-1.5 flex items-center justify-between transition-all">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs">🔥</span>
+                            <div>
+                                <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors text-[11px]">Fire Faucet Terminal</span>
+                            </div>
+                        </div>
+                        <span class="font-mono text-[10px] text-slate-500">Hybrid Automated</span>
+                    </a>
+                    <a href="https://freebitco.in/?r=17006348" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-1.5 flex items-center justify-between transition-all">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs">₿</span>
+                            <div>
+                                <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors text-[11px]">FreeBitco.in Ledger</span>
+                                <span class="text-[10px] font-mono text-orange-400 ml-1 bg-orange-500/10 px-1 rounded">BTC Only</span>
+                            </div>
+                        </div>
+                        <span class="font-mono text-[10px] text-slate-500">Hourly Loop</span>
+                    </a>
+                    <a href="https://r.adbtc.top/1169353" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-1.5 flex items-center justify-between transition-all">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs">👀</span>
+                            <div>
+                                <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors text-[11px]">AdBTC Operator</span>
+                            </div>
+                        </div>
+                        <span class="font-mono text-[10px] text-slate-500">Satoshi Accumulator</span>
+                    </a>
+                    <a href="https://viefaucet.com?r=6380ee9189dc9d60cddeaf22" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-1.5 flex items-center justify-between transition-all">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs">🌟</span>
+                            <div>
+                                <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors text-[11px]">Viefaucet Client</span>
+                            </div>
+                        </div>
+                        <span class="font-mono text-[10px] text-slate-500">Multi-Asset</span>
+                    </a>
+                    <a href="https://rollercoin.com/?r=kcq1472k" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-1.5 flex items-center justify-between transition-all">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs">⛏️</span>
+                            <div>
+                                <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors text-[11px]">RollerCoin Simulator</span>
+                            </div>
+                        </div>
+                        <span class="font-mono text-[10px] text-slate-500">Virtual Allocation</span>
+                    </a>
+                    <a href="https://simplebits.io/ref/0rd4li1cSLTL" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-1.5 flex items-center justify-between transition-all">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs">⚙️</span>
+                            <div>
+                                <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors text-[11px]">SimpleBits Miner</span>
+                            </div>
+                        </div>
+                        <span class="font-mono text-[10px] text-slate-500">Hash Micro-Stakes</span>
+                    </a>
+                </div>
             </div>
+
+            <div class="bg-panel border border-borderClr rounded p-2 category-group" data-cat="family">
+                <div class="border-b border-borderClr pb-1.5 mb-2 flex items-center justify-between px-1">
+                    <h2 class="font-mono font-bold text-blue-400 uppercase tracking-tight flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                        Free Faucet Family Layer
+                    </h2>
+                    <span class="font-mono text-[10px] text-slate-500">8 Nodes Loaded</span>
+                </div>
+                <div class="grid grid-cols-2 gap-1.5">
+                    <a href="https://freebch.in?ref=GYbcNKDvc8" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-2 transition-all">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors">FreeBCH</span>
+                            <span class="text-[10px] font-mono text-emerald-400">BCH</span>
+                        </div>
+                        <div class="text-[10px] text-slate-500 font-mono">Micro Ref Matrix</div>
+                    </a>
+                    <a href="https://freebnb.in?ref=t3guZH6504" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-2 transition-all">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors">FreeBNB</span>
+                            <span class="text-[10px] font-mono text-yellow-400">BNB</span>
+                        </div>
+                        <div class="text-[10px] text-slate-500 font-mono">BSC Smart Node</div>
+                    </a>
+                    <a href="https://freearb.in?ref=DT-wOppZxs" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-2 transition-all">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors">FreeARB</span>
+                            <span class="text-[10px] font-mono text-blue-400">ARB</span>
+                        </div>
+                        <div class="text-[10px] text-slate-500 font-mono">Arbitrum L2 Array</div>
+                    </a>
+                    <a href="https://freeshib.in?ref=Q4gBET4aub" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-2 transition-all">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors">FreeSHIB</span>
+                            <span class="text-[10px] font-mono text-orange-400">SHIB</span>
+                        </div>
+                        <div class="text-[10px] text-slate-500 font-mono">Meme Scale Token</div>
+                    </a>
+                    <a href="https://freesui.in?ref=2OBNF6surV" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-2 transition-all">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors">FreeSUI</span>
+                            <span class="text-[10px] font-mono text-cyan-400">SUI</span>
+                        </div>
+                        <div class="text-[10px] text-slate-500 font-mono">Sui Network Engine</div>
+                    </a>
+                    <a href="https://freetoncoin.in?ref=4oDtavonot" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-2 transition-all">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors">FreeTON</span>
+                            <span class="text-[10px] font-mono text-blue-400">TON</span>
+                        </div>
+                        <div class="text-[10px] text-slate-500 font-mono">Telegram Ecosystem</div>
+                    </a>
+                    <a href="https://freetron.in?ref=D96wTKmOPD" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-2 transition-all">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors">FreeTRON</span>
+                            <span class="text-[10px] font-mono text-red-400">TRX</span>
+                        </div>
+                        <div class="text-[10px] text-slate-500 font-mono">TRON Core Node</div>
+                    </a>
+                    <a href="https://freexrp.in?ref=sKqECBxDCJ" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-2 transition-all">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors">FreeXRP</span>
+                            <span class="text-[10px] font-mono text-indigo-400">XRP</span>
+                        </div>
+                        <div class="text-[10px] text-slate-500 font-mono">Ripple Protocol</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-panel border border-borderClr rounded p-2 category-group" data-cat="pick">
+                <div class="border-b border-borderClr pb-1.5 mb-2 flex items-center justify-between px-1">
+                    <h2 class="font-mono font-bold text-orange-400 uppercase tracking-tight flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+                        Pick Native Network Grid
+                    </h2>
+                    <span class="font-mono text-[10px] text-slate-500">7 Nodes Loaded</span>
+                </div>
+                <div class="space-y-1 max-h-[220px] overflow-y-auto custom-scrollbar pr-1">
+                    <a href="https://dogepick.io/?ref=limana" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-1.5 flex items-center justify-between transition-all">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs">🐕</span>
+                            <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors">DogePick Cluster</span>
+                        </div>
+                        <span class="font-mono text-[10px] text-yellow-500 bg-yellow-500/10 px-1 rounded">DOGE Asset</span>
+                    </a>
+                    <a href="https://litepick.io/?ref=source" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-1.5 flex items-center justify-between transition-all">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs">🪙</span>
+                            <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors">LitePick Cluster</span>
+                        </div>
+                        <span class="font-mono text-[10px] text-slate-400 bg-slate-500/10 px-1 rounded">LTC Native</span>
+                    </a>
+                    <a href="https://polpick.io/?ref=dashboard" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-1.5 flex items-center justify-between transition-all">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs">⬟</span>
+                            <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors">POLpick Cluster</span>
+                        </div>
+                        <span class="font-mono text-[10px] text-purple-400 bg-purple-500/10 px-1 rounded">Polygon Edge</span>
+                    </a>
+                    <a href="https://solpick.io/?ref=dashboard" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-1.5 flex items-center justify-between transition-all">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs">☀️</span>
+                            <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors">SOLpick Cluster</span>
+                        </div>
+                        <span class="font-mono text-[10px] text-purple-400 bg-purple-500/10 px-1 rounded">Solana Core</span>
+                    </a>
+                    <a href="https://suipick.io/?ref=dashboard" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-1.5 flex items-center justify-between transition-all">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs">💎</span>
+                            <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors">SUIpick Cluster</span>
+                        </div>
+                        <span class="font-mono text-[10px] text-cyan-400 bg-cyan-500/10 px-1 rounded">Sui Object</span>
+                    </a>
+                    <a href="https://tonpick.game/?ref=dashboard" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-1.5 flex items-center justify-between transition-all">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs">🎮</span>
+                            <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors">TONpick Engine</span>
+                        </div>
+                        <span class="font-mono text-[10px] text-blue-400 bg-blue-500/10 px-1 rounded">TON App</span>
+                    </a>
+                    <a href="https://usdpick.io?ref=fAYHy9teXq" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-1.5 flex items-center justify-between transition-all">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs">💵</span>
+                            <span class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors">USDpick Engine</span>
+                        </div>
+                        <span class="font-mono text-[10px] text-emerald-400 bg-emerald-500/10 px-1 rounded">Pegged Stable</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-panel border border-borderClr rounded p-2 md:col-span-2 category-group" data-cat="task">
+                <div class="border-b border-borderClr pb-1.5 mb-2 flex items-center justify-between px-1">
+                    <h2 class="font-mono font-bold text-yellow-400 uppercase tracking-tight flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-yellow-500"></span>
+                        Verified GPT &amp; Bandwidth Sharing Matrices
+                    </h2>
+                    <span class="font-mono text-[10px] text-slate-500">3 Alternative Channels Active</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                    <a href="https://pawns.app/?r=1112465" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-2.5 transition-all">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-sm">🌐</span>
+                            <h3 class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors text-[11px]">Pawns.app Node</h3>
+                        </div>
+                        <p class="text-slate-400 text-[10px]">Convert residual unutilized internet pipeline bandwidth into passive token capital streams.</p>
+                        <div class="mt-2 text-[9px] font-mono text-slate-500">SYSTEM: UNRESTRICTED</div>
+                    </a>
+                    <a href="https://everve.net/ref/678797/" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-2.5 transition-all">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-sm">📱</span>
+                            <h3 class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors text-[11px]">Everve Social Matrix</h3>
+                        </div>
+                        <p class="text-slate-400 text-[10px]">Execute automated and manually structured micro tasks to scale secondary balances.</p>
+                        <div class="mt-2 text-[9px] font-mono text-slate-500">ROUTER: HIGH LIQUIDITY</div>
+                    </a>
+                    <a href="https://freeward.net/ref/7pex8" target="_blank" class="matrix-row group block bg-surface border border-borderClr rounded p-2.5 transition-all">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-sm">🎁</span>
+                            <h3 class="font-bold text-slate-200 group-hover:text-cyanAccent transition-colors text-[11px]">Freeward Engine</h3>
+                        </div>
+                        <p class="text-slate-400 text-[10px]">Direct portal access for survey engagement metrics and micro-payout conversions.</p>
+                        <div class="mt-2 text-[9px] font-mono text-slate-500">ASSET CLASS: FLEXIBLE</div>
+                    </a>
+                </div>
+            </div>
+
         </section>
-    </div>
+    </main>
+
+    <footer class="max-w-[1600px] w-full mx-auto mt-4 pt-2 border-t border-borderClr flex flex-col sm:flex-row items-center justify-between gap-2 font-mono text-[10px] text-slate-500">
+        <div>
+            <span>Security Matrix Verification Token: </span>
+            <span class="text-slate-400 font-mono">0x7F...4EA26</span>
+        </div>
+        <div class="flex gap-4">
+            <span>Latency Target: <span class="text-emerald-400">Minimal Friction</span></span>
+            <span>Ref Parameters: <span class="text-cyanAccent">Preserved &amp; Operational</span></span>
+        </div>
+    </footer>
+
+    <script>
+        function filterMatrix() {
+            const input = document.getElementById('matrixSearch').value.toLowerCase();
+            const rows = document.querySelectorAll('.matrix-row');
+            
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+
+        function filterCategory(cat) {
+            const groups = document.querySelectorAll('.category-group');
+            document.getElementById('matrixSearch').value = '';
+            
+            groups.forEach(group => {
+                if (cat === 'all' || group.getAttribute('data-cat') === cat) {
+                    group.style.display = "";
+                    const internalRows = group.querySelectorAll('.matrix-row');
+                    internalRows.forEach(r => r.style.display = "");
+                } else {
+                    group.style.display = "none";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
